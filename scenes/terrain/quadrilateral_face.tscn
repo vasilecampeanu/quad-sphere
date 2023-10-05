@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4w1hmmxg8a43"]
+
+[ext_resource type="Script" path="res://scripts/scenes/quadrilateral_face.gd" id="1_mbwu2"]
+
+[node name="QuadrilateralFace" type="MeshInstance3D"]
+script = ExtResource("1_mbwu2")

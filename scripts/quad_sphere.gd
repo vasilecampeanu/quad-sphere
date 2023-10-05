@@ -2,11 +2,10 @@
 extends Node3D
 class_name QuadSphere
 
-# Exports
 @export var settings: QuadSphereSettings
 
-# Preloads
-const CONSTS = preload("./core/constants.gd")
+const CONSTS := preload("./core/constants.gd")
+const QUADRILITERAL_FACE := preload("../scenes/terrain/quadrilateral_face.tscn")
 
 func _ready():
 	self.generate()
@@ -17,4 +16,7 @@ func generate():
 	for child in get_children():
 		child.queue_free()
 
-	# TODO: Assemble QuadSphere
+	for direction in self.CONSTS.DIRECTIONS:
+		var face: QuadrilateralFace = self.QUADRILITERAL_FACE.instantiate()
+		face.build(settings, direction)
+		self.add_child(face)
