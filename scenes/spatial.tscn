@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bp3oiuqo102ed"]
+
+[ext_resource type="Script" path="res://scripts/quad_sphere.gd" id="1_27dus"]
+[ext_resource type="Resource" uid="uid://c7q1su2frnnkw" path="res://resources/quad_sphere_settings.tres" id="2_ncl0p"]
+
+[node name="Spatial" type="Node3D"]
+
+[node name="QuadSphere" type="Node3D" parent="."]
+script = ExtResource("1_27dus")
+settings = ExtResource("2_ncl0p")
