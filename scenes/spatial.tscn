@@ -8,3 +8,9 @@
 [node name="QuadSphere" type="Node3D" parent="."]
 script = ExtResource("1_27dus")
 settings = ExtResource("2_ncl0p")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, -4.96191e-16, 3.16108e-16, 3.16108e-16, 0.906308, 0.422618, -4.96191e-16, -0.422618, 0.906308, 2.08165e-12, 2, 3)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, -6.97574e-16, -1.5246e-23, -1.5246e-23, -4.37114e-08, 1, -6.97574e-16, -1, -4.37114e-08, 2.08165e-12, 5, 2.08165e-12)
