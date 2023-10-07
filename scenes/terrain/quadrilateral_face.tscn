@@ -1,19 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4w1hmmxg8a43"]
+[gd_scene load_steps=7 format=3 uid="uid://c4w1hmmxg8a43"]
 
+[ext_resource type="Shader" path="res://scripts/shaders/quadrilateral_face.gdshader" id="1_4hmqu"]
 [ext_resource type="Script" path="res://scripts/scenes/quadrilateral_face.gd" id="1_mbwu2"]
 [ext_resource type="Script" path="res://scripts/bounding_box.gd" id="2_s7leg"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kthc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqal1"]
+render_priority = 0
+shader = ExtResource("1_4hmqu")
+shader_parameter/albedo = Vector4(1, 1, 1, 1)
+shader_parameter/wire_color = Vector4(0, 0, 0, 1)
+shader_parameter/wire_width = 1.0
+shader_parameter/wire_smoothness = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbc2g"]
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_okdw0"]
-material = SubResource("StandardMaterial3D_1kthc")
+[sub_resource type="BoxMesh" id="BoxMesh_n77in"]
+material = SubResource("StandardMaterial3D_fbc2g")
 size = Vector3(0, 0, 0)
 
 [node name="QuadrilateralFace" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_tqal1")
 script = ExtResource("1_mbwu2")
 
 [node name="BoundingBox" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_okdw0")
+visible = false
+mesh = SubResource("BoxMesh_n77in")
 script = ExtResource("2_s7leg")

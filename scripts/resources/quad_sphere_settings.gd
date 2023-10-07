@@ -2,7 +2,7 @@
 extends Resource
 class_name QuadSphereSettings
 
-@export_range(3, 999) var resolution: int = 9 :
+@export_range(3, 999) var resolution: int = 10 :
 	set(value):
 		resolution = value
 		self.on_setting_changes()
